@@ -28,6 +28,24 @@ for i in range(n, 0, -1):
     # 만들어진 줄을 출력한다.
     print(line)
 
+##문수호ver
+num_star = 7 # 처음 별 갯수 지정 (7개)
+# i가 num_star에서 0까지 2씩 차감 반복
+for i in range(num_star, 0, -2): 
+    
+    #앞에 띄어 쓰기 할 ' ' 계산하기, 중앙에 정렬 되도록 띄어쓰기 값 만들기 
+    #2씩 차감하니까 양쪽에 하나 하나씩 줘야 대칭이니까 나누기 2했을 때 값 만큼 ' ' 넣기
+    spaces = ' ' * ((num_star - i) // 2)
+    
+    #줄 마다 필요한 별 갯수 정하기
+    stars = '*' * i
+    
+    #위의 변수들 star_image라는 변수에 합해서 저장
+    star_image = spaces + stars
+    
+    #결과 출력
+    print(star_image)
+
 
 #############################
 #         문제 5-2          #
@@ -58,6 +76,48 @@ for i in range(n, -n-1, -1):
     
     # 만들어진 줄을 출력한다.
     print(line)
+-----
+#문수호ver
+## 함수 만들기 버전
+def print_star(num_star):
+    #역삼각형 8,6,4,2 부분
+    # i가 num_star에서 0까지 2씩 차감 반복
+    for i in range(num_star, 0, -2): 
+        
+        #앞에 띄어 쓰기 할 ' ' 계산하기, 중앙에 정렬 되도록 띄어쓰기 값 만들기 
+        #2씩 차감하니까 양쪽에 하나 하나씩 줘야 대칭이니까 나누기 2했을 때 값 만큼 ' ' 넣기
+        spaces = ' ' * ((num_star - i) // 2)
+        
+        #줄 마다 필요한 별 갯수 정하기
+        stars = '*' * i
+        
+        #위의 변수들 star_image라는 변수에 합해서 저장
+        star_image = spaces + stars
+        
+        #결과 출력
+        print(star_image)
+    #일반 삼각형 4,6,8 부분
+    for j in range(4, num_star + 2, 2):
+        
+        #앞에 띄어 쓰기 할 ' ' 계산하기, 중앙에 정렬 되도록 띄어쓰기 값 만들기 
+        #2씩 차감하니까 양쪽에 하나 하나씩 줘야 대칭이니까 나누기 2했을 때 값 만큼 ' ' 넣기
+        
+        spaces = ' ' * ((num_star - j) // 2) 
+        #줄 마다 필요한 별 갯수 정하기
+        
+        stars = '*' * j  
+        #위의 변수들 line이라는 변수에 합해서 저장
+        
+        star_image2 = spaces + stars  
+        print(star_image2)
+
+# 별 갯수 지정
+num_star = 8
+
+# 함수 호출
+print_star(num_star)
+
+-------
 
 #############################
 #         문제 5-3          #
